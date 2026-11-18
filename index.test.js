@@ -8,7 +8,7 @@ const UserSchema = z.object({
 
 test('корректный пользователь проходит валидацию', () => {
   const result = UserSchema.safeParse({ id: 1, name: 'Иван', email: 'ivan@example.com' });
-  expect(result.success).toBe(false);
+  expect(result.success).toBe(true);
 });
 
 test('некорректный id не проходит валидацию', () => {
